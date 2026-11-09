@@ -1,0 +1,10 @@
+project: savantenvs/flecs
+target: fuzz_script-mined-3443388
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_script-mined-3443388/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_script
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_script-mined-3443388/fuzz_script.dict
