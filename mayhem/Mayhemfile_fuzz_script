@@ -1,0 +1,11 @@
+project: savantenvs/flecs
+target: fuzz_script-mined-3affabf
+# seed-from: https://app.mayhem.security/savantenvs/flecs/fuzz-script
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_script-mined-3affabf/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_script
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_script-mined-3affabf/fuzz_script-mined-3affabf.dict
