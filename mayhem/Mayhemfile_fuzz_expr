@@ -1,0 +1,10 @@
+project: savantenvs/flecs
+target: fuzz_expr
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_expr/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_expr
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_expr/fuzz_expr.dict
